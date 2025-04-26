@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>互動式前端展示</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="antialiased text-gray-800">
+
+  <!-- 導覽列 -->
+  <nav class="fixed top-0 left-0 right-0 bg-white shadow z-50">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#" class="flex items-center">
+        <img src="https://placehold.jp/100x50.png" alt="Logo" class="h-10 w-auto"/>
+      </a>
+      <ul class="hidden md:flex space-x-8">
+        <li><a href="#" class="hover:text-emerald-600 transition">首頁</a></li>
+        <li><a href="#" class="hover:text-emerald-600 transition">團隊介紹</a></li>
+        <li><a href="#" class="hover:text-emerald-600 transition">服務項目</a></li>
+        <li><a href="#" class="hover:text-emerald-600 transition">聯絡方式</a></li>
+      </ul>
+      <button id="menuToggle" class="md:hidden">
+        <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+    <div id="menuPanel" class="hidden md:hidden bg-white border-t">
+      <ul class="px-6 py-4 space-y-4">
+        <li><a href="#" class="block hover:text-emerald-600">首頁</a></li>
+        <li><a href="#" class="block hover:text-emerald-600">團隊介紹</a></li>
+        <li><a href="#" class="block hover:text-emerald-600">服務項目</a></li>
+        <li><a href="#" class="block hover:text-emerald-600">聯絡方式</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- 首頁橫幅 -->
+  <header class="pt-24 bg-gradient-to-r from-emerald-500 to-teal-600 text-white">
+    <div class="max-w-7xl mx-auto px-6 text-center py-20">
+      <h1 class="text-5xl md:text-6xl font-bold mb-6">探索前端互動設計新體驗</h1>
+      <p class="text-lg md:text-xl mb-8 text-emerald-100">使用 Tailwind CSS 打造快速、彈性、現代化的網頁</p>
+      <div class="flex flex-col md:flex-row gap-4 justify-center">
+        <a href="#start" class="bg-white text-emerald-600 px-8 py-3 rounded-lg font-semibold hover:bg-emerald-50 transition">立即體驗</a>
+        <a href="#video" class="bg-emerald-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-emerald-700 transition border-2 border-white">觀看教學</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 特色介紹 -->
+  <section id="advantages" class="max-w-7xl mx-auto px-6 py-16">
+    <h2 class="text-4xl font-bold text-center text-emerald-800 mb-12">我們的特色</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="bg-white p-6 rounded-xl shadow hover:shadow-2xl transition">
+        <img src="https://placehold.jp/150x150.png" alt="高效" class="w-24 h-24 mx-auto mb-4"/>
+        <h3 class="font-bold text-xl mb-2 border-b-4 border-emerald-500 pb-2">高效整合</h3>
+        <p>利用原子化樣式迅速建構頁面，讓開發變得輕鬆愉快。</p>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow hover:shadow-2xl transition">
+        <img src="https://placehold.jp/150x150.png" alt="響應" class="w-24 h-24 mx-auto mb-4"/>
+        <h3 class="font-bold text-xl mb-2 border-b-4 border-emerald-500 pb-2">完美響應</h3>
+        <p>支援多裝置設計，打造一致的使用者體驗。</p>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow hover:shadow-2xl transition">
+        <img src="https://placehold.jp/150x150.png" alt="客製" class="w-24 h-24 mx-auto mb-4"/>
+        <h3 class="font-bold text-xl mb-2 border-b-4 border-emerald-500 pb-2">彈性客製</h3>
+        <p>依照需求自由設計 UI 結構，擁有完整主控權。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 熱門課程 -->
+  <section id="courses" class="bg-gray-50 py-16 px-6">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-4xl font-bold text-center text-emerald-800 mb-12">精選課程</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-white rounded-xl overflow-hidden shadow hover:shadow-2xl transition">
+          <img src="https://placehold.jp/300x200.png" alt="課程A" class="w-full h-48 object-cover"/>
+          <div class="p-6">
+            <h3 class="font-bold text-xl mb-2">HTML 入門指南</h3>
+            <p class="text-gray-600 mb-4">從零開始掌握基礎網頁結構與標籤。</p>
+            <p class="text-sm text-gray-500 mb-6">課程長度：2 小時</p>
+            <a href="#" class="block bg-emerald-600 text-white py-3 rounded-lg text-center hover:bg-emerald-700 transition">立即參加</a>
+          </div>
+        </div>
+        <div class="bg-white rounded-xl overflow-hidden shadow hover:shadow-2xl transition">
+          <img src="https://placehold.jp/300x200.png" alt="課程B" class="w-full h-48 object-cover"/>
+          <div class="p-6">
+            <h3 class="font-bold text-xl mb-2">CSS 樣式設計</h3>
+            <p class="text-gray-600 mb-4">學會佈局、配色與互動樣式設計。</p>
+            <p class="text-sm text-gray-500 mb-6">課程長度：3 小時</p>
+            <a href="#" class="block bg-emerald-600 text-white py-3 rounded-lg text-center hover:bg-emerald-700 transition">立即參加</a>
+          </div>
+        </div>
+        <div class="bg-white rounded-xl overflow-hidden shadow hover:shadow-2xl transition">
+          <img src="https://placehold.jp/300x200.png" alt="課程C" class="w-full h-48 object-cover"/>
+          <div class="p-6">
+            <h3 class="font-bold text-xl mb-2">JavaScript 動態應用</h3>
+            <p class="text-gray-600 mb-4">學會為網站加上互動與邏輯行為。</p>
+            <p class="text-sm text-gray-500 mb-6">課程長度：4 小時</p>
+            <a href="#" class="block bg-emerald-600 text-white py-3 rounded-lg text-center hover:bg-emerald-700 transition">立即參加</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 用戶心得 -->
+  <section id="testimonials" class="max-w-7xl mx-auto px-6 py-16">
+    <h2 class="text-4xl font-bold text-center text-emerald-800 mb-12">學員回饋</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="bg-white p-8 rounded-xl shadow hover:shadow-2xl transition text-center">
+        <img src="https://placehold.jp/100x100.png" alt="用戶A" class="w-20 h-20 rounded-full mx-auto mb-4 border-4 border-emerald-100"/>
+        <p class="italic text-gray-600 mb-4">「介面美觀又容易操作，整體體驗非常好！」</p>
+        <p class="font-semibold text-emerald-800">— 陳怡君</p>
+      </div>
+      <div class="bg-white p-8 rounded-xl shadow hover:shadow-2xl transition text-center">
+        <img src="https://placehold.jp/100x100.png" alt="用戶B" class="w-20 h-20 rounded-full mx-auto mb-4 border-4 border-emerald-100"/>
+        <p class="italic text-gray-600 mb-4">「學到很多實用技巧，馬上能用在工作上。」</p>
+        <p class="font-semibold text-emerald-800">— 黃志偉</p>
+      </div>
+      <div class="bg-white p-8 rounded-xl shadow hover:shadow-2xl transition text-center">
+        <img src="https://placehold.jp/100x100.png" alt="用戶C" class="w-20 h-20 rounded-full mx-auto mb-4 border-4 border-emerald-100"/>
+        <p class="italic text-gray-600 mb-4">「老師講解清楚，教學節奏掌握得剛剛好！」</p>
+        <p class="font-semibold text-emerald-800">— 吳佩玲</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 註冊表單 -->
+  <section id="register" class="bg-gray-50 py-16 px-6">
+    <div class="max-w-3xl mx-auto bg-white rounded-xl shadow p-8">
+      <h2 class="text-3xl font-bold text-center text-emerald-800 mb-8">免費註冊</h2>
+      <form class="space-y-6">
+        <div>
+          <label for="username" class="block mb-2">姓名</label>
+          <input type="text" id="username" required class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-emerald-500"/>
+        </div>
+        <div>
+          <label for="useremail" class="block mb-2">電子信箱</label>
+          <input type="email" id="useremail" required class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-emerald-500"/>
+        </div>
+        <div>
+          <label for="userphone" class="block mb-2">電話號碼</label>
+          <input type="tel" id="userphone" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-emerald-500"/>
+        </div>
+        <div>
+          <label for="usercourse" class="block mb-2">選擇課程</label>
+          <select id="usercourse" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-emerald-500">
+            <option value="">請選擇</option>
+            <option value="html">HTML 入門</option>
+            <option value="css">CSS 設計</option>
+            <option value="js">JavaScript 應用</option>
+          </select>
+        </div>
+        <div>
+          <label for="usermsg" class="block mb-2">留言</label>
+          <textarea id="usermsg" rows="4" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-emerald-500"></textarea>
+        </div>
+        <button type="submit" class="w-full bg-emerald-600 text-white py-3 rounded-lg font-semibold hover:bg-emerald-700 transition">送出表單</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- 頁尾 -->
+  <footer class="bg-gray-900 text-gray-300">
+    <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div>
+        <h3 class="font-bold text-white mb-4">我們的理念</h3>
+        <p>幫助每位學員掌握網頁開發實力，走在業界前端。</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-white mb-4">網站連結</h3>
+        <ul class="space-y-2">
+          <li><a href="#" class="hover:text-emerald-400">常見問題</a></li>
+          <li><a href="#" class="hover:text-emerald-400">課程內容</a></li>
+          <li><a href="#" class="hover:text-emerald-400">購課說明</a></li>
+          <li><a href="#" class="hover:text-emerald-400">聯繫我們</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-bold text-white mb-4">聯絡方式</h3>
+        <p>台中市東區創意路88號</p>
+        <p>02-2345-6789</p>
+        <p>hello@frontendcourse.tw</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-white mb-4">追蹤平台</h3>
+        <div class="flex space-x-4">
+          <a href="#" class="hover:text-emerald-400">Facebook</a>
+          <a href="#" class="hover:text-emerald-400">Instagram</a>
+          <a href="#" class="hover:text-emerald-400">YouTube</a>
+          <a href="#" class="hover:text-emerald-400">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-gray-800 py-4 text-center text-sm">
+      &copy; 2024 前端互動教室. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- JS 選單互動 -->
+  <script>
+    const menuButton = document.getElementById('menuToggle');
+    const menuContent = document.getElementById('menuPanel');
+    menuButton.addEventListener('click', () => {
+      menuContent.classList.toggle('hidden');
+    });
+  </script>
+
+</body>
+</html>
